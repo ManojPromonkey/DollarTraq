@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>DollarTraq Invitation</title>
+</head>
+<body style="margin:0;padding:0;background:#f5f7fb;font-family:Arial,sans-serif;">
+
+<table width="100%" cellpadding="0" cellspacing="0" style="background:#f5f7fb;padding:40px 0;">
+    <tr>
+        <td align="center">
+
+            <table width="600" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:12px;overflow:hidden;">
+                
+                <!-- Header -->
+                <tr>
+                    <td style="background:#155dfc;padding:30px;text-align:center;">
+                        <h1 style="color:#ffffff;margin:0;font-size:28px;">
+                            DollarTraq
+                        </h1>
+                        <p style="color:#dce4f8;margin-top:8px;">
+                            Freight Visibility Simplified
+                        </p>
+                    </td>
+                </tr>
+
+                <!-- Body -->
+                <tr>
+                    <td style="padding:40px;">
+                        <h2 style="color:#1a1a1a;margin-top:0;">
+                            You're Invited!
+                        </h2>
+
+                        <p style="font-size:16px;color:#555;">
+                            Hello {{ $userName }},
+                        </p>
+
+                        <p style="font-size:16px;color:#555;line-height:1.7;"> You have been invited to join the <strong>DollarTraq</strong> platform. Please use the details below to access your account. </p>
+
+                        <table cellpadding="10" cellspacing="0" width="100%" style="background:#f8f9fc;border-radius:8px;margin:25px 0;"> 
+                            <tr> 
+                                <td width="180"><strong>Assigned Role:</strong></td> 
+                                <td>{{ $role }}</td> 
+                            </tr> 
+                            
+                            <tr> 
+                                <td><strong>Username:</strong></td> 
+                                <td>{{ $username }}</td> 
+                            </tr> 
+
+                            <tr> 
+                                <td><strong>Password:</strong></td> 
+                                <td>{{ $password }}</td> 
+                            </tr> 
+                        </table>
+
+                        <div style="text-align:center;margin:35px 0;">
+                            <a href="{{ $inviteLink }}"
+                               style="background:#0F62FE;
+                                      color:#ffffff;
+                                      text-decoration:none;
+                                      padding:14px 30px;
+                                      border-radius:8px;
+                                      display:inline-block;
+                                      font-size:16px;
+                                      font-weight:bold;">
+                                Login Here
+                            </a>
+                        </div>
+
+                        <p style="font-size:14px;color:#777;">
+                            If the button doesn't work, copy and paste the following URL into your browser:
+                        </p>
+
+                    </td>
+                </tr>
+
+                <!-- Footer -->
+                <tr>
+                    <td style="background:#f8f9fc;padding:20px;text-align:center;">
+                        <p style="margin:0;color:#888;font-size:13px;">
+                            © {{ date('Y') }} DollarTraq. All rights reserved.
+                        </p>
+                    </td>
+                </tr>
+
+            </table>
+
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
