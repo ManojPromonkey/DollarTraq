@@ -6,8 +6,8 @@ use App\Modules\Base\Models\BaseModel;
 
 use Illuminate\Support\Facades\DB;
 
-//use App\Models\Carriers\CarriersModel;
-use App\Models\carriers\Carrier;
+use App\Models\Carriers\CarriersModel;
+//use App\Models\carriers\Carrier;
 
 use App\Models\System\ActivityLogsModel;
 
@@ -41,7 +41,7 @@ class CarrierConnectRequestsModel extends BaseModel{
         $this->setTableIndex('row_id');
 		$this->setTableName('carrier_connect_requests');
 
-		$this->carriers_model = new Carrier;//CarriersModel;
+		$this->carriers_model = new CarriersModel;
 		$this->activity_logs_model = new ActivityLogsModel;
 	}
 
@@ -97,16 +97,16 @@ class CarrierConnectRequestsModel extends BaseModel{
 		$receiver_id = $request->post('receiver');
 
 		if(!$receiver_id){
-
 			return ['status' => false, 'message' => 'Something went wrong. Please try again after sometime.'];
 		}
+		
 
 		try {
 
 			$_receiver = $this->carriers_model->fetch_row_by_id($receiver_id);
+			
 
 			if(!$_receiver || !$user){
-
 				return ['status' => false, 'message' => 'Something went wrong. Please try again after sometime.'];
 			}
 
@@ -149,9 +149,7 @@ class CarrierConnectRequestsModel extends BaseModel{
 			return ['status' => true, 'message' => 'Request has been sent successfully.'];
 
 		}catch(\Throwable $e){
-
 			Log::error('carrier connect_request failed: ' . $e->getMessage());
-
 			return ['status' => false, 'message' => 'Something went wrong. Please try again after sometime.'];
 		}
 	}

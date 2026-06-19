@@ -9,7 +9,7 @@ class ActivityLogsModel extends BaseModel
     protected $table = 'activity_logs';
 
     function __construct(){
-        $this->setTableIndex('id');
+        $this->setTableIndex('row_id');
 		$this->setTableName('activity_logs');
 	}
 
